@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
@@ -89,7 +90,6 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
       backgroundColor: Color(0xFFF6F6F6),
       appBar: AppBar(
         toolbarHeight: 100,
-        brightness: Brightness.dark,
         backgroundColor: Color(0xffefb129),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,7 +121,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
               onPressed: () {
                 Navigator.pop(context);
               }),
-        ],
+        ], systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: Stack(
         children: [

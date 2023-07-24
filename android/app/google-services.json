@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "699566373660",
+    "project_id": "goldvault-8375b",
+    "storage_bucket": "goldvault-8375b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699566373660:android:f7ec0d685c220c30b358d9",
+        "android_client_info": {
+          "package_name": "com.example.goldvault"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699566373660-3qktld463vrq8hredcio6cjvm7r71q4v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.goldvault",
+            "certificate_hash": "fb89ad18be2e6a80336ffd9f95d0d8f16cac5398"
+          }
+        },
+        {
+          "client_id": "699566373660-1rtkoi5346fkmb3131ns8s0qer30qi1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfHsqQYUqDQ_AIEsHW8M4Y7GCfuU3wsQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699566373660-1rtkoi5346fkmb3131ns8s0qer30qi1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

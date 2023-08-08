@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 import 'package:goldvault/Constants/webService.dart';
@@ -55,7 +56,7 @@ class _ChangePasswordState extends State<ChangePassword> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: appBar(context: context, title: "Change Password"),
+      appBar: appBar(context: context, title: "Change Password".tr),
       body: Padding(
         padding: EdgeInsets.all(20),
         child: SingleChildScrollView(
@@ -63,10 +64,10 @@ class _ChangePasswordState extends State<ChangePassword> {
             children: [
               CustomTextField(
                 controller: currentPasswordController,
-                hintText: "Current Password",
+                hintText: "Current Password".tr,
                 obscureText: hideCurrentPassword,
                 suffixIcon: hideCurrentPassword==true?"assets/images/HidePassIcon.svg":"assets/images/HidePassIcon.svg",
-                errormsg: 'Enter password',
+                errormsg: 'Enter password'.tr,
                 suffixAction: () {
                   setState(() {
                     hideCurrentPassword = !hideCurrentPassword;
@@ -78,10 +79,10 @@ class _ChangePasswordState extends State<ChangePassword> {
               ),
               CustomTextField(
                 controller: newPasswordController,
-                hintText: "New Password",
+                hintText: "New Password".tr,
                 obscureText: hideNewPassword,
                 suffixIcon: hideNewPassword==true?"assets/images/HidePassIcon.svg":"assets/images/HidePassIcon.svg",
-                errormsg: 'Enter password',
+                errormsg: 'Enter password'.tr,
                 suffixAction: () {
                   setState(() {
                     hideNewPassword = !hideNewPassword;
@@ -93,10 +94,10 @@ class _ChangePasswordState extends State<ChangePassword> {
               ),
               CustomTextField(
                 controller: conPasswordController,
-                hintText: "Confirm Password",
+                hintText: "Confirm Password".tr,
                 obscureText: hideConfirmPassword,
                 suffixIcon: hideConfirmPassword==true?"assets/images/HidePassIcon.svg":"assets/images/ShowPassIcon.svg",
-                errormsg: 'Enter password',
+                errormsg: 'Enter password'.tr,
                 suffixAction: () {
                   setState(() {
                     hideConfirmPassword = !hideConfirmPassword;
@@ -107,7 +108,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                 height: height * 0.1,
               ),
               CustomButton(
-                text: "SAVE",
+                text: "SAVE".tr,
                 width: width * width,
                 onTap: () {
                   if (currentPasswordController.text.isEmpty) {

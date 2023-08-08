@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
@@ -53,7 +54,7 @@ class _WithdrawCashState extends State<WithdrawCash> {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: appBar(context: context, title: "Withdraw Cash"),
+      appBar: appBar(context: context, title: "Withdraw Cash".tr),
       body: SingleChildScrollView(
         child: Container(
           height: height * 0.87,
@@ -68,7 +69,7 @@ class _WithdrawCashState extends State<WithdrawCash> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          ParagraphText(text: 'Cash Balance: '),
+                          ParagraphText(text: 'Cash Balance: '.tr),
                           SubHeadingText(
                             text: "${userAvailableAmount} €",
                             fontWeight: FontWeight.bold,
@@ -84,8 +85,8 @@ class _WithdrawCashState extends State<WithdrawCash> {
                     SizedBox(height: height * 0.1,),
                     CustomTextField(
                       controller: amountController,
-                      hintText: "Enter Amount",
-                      errormsg: 'Enter Amount',
+                      hintText: "Enter Amount".tr,
+                      errormsg: 'Enter Amount'.tr,
                       keyboardType:TextInputType.number,
                       borderColor: Colors.black12,
                       borderradius: 10,
@@ -93,8 +94,8 @@ class _WithdrawCashState extends State<WithdrawCash> {
                     SizedBox(height: height*0.03,),
                     CustomTextField(
                       controller: bankNumberController,
-                      hintText: "Bank Number",
-                      errormsg: 'Enter Bank Number',
+                      hintText: "Bank Number".tr,
+                      errormsg: 'Enter Bank Number'.tr,
                       keyboardType:TextInputType.number,
                       borderColor: Colors.black12,
                       borderradius: 10,
@@ -103,7 +104,7 @@ class _WithdrawCashState extends State<WithdrawCash> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: MainHeadingText(
-                        text: "Your withdrawal request will be processed within 2 working days. ",
+                        text: "Your withdrawal request will be processed within 2 working days".tr,
                         textAlign: TextAlign.center,
                         color: Colors.grey,
                         fontSize: 15,
@@ -117,10 +118,10 @@ class _WithdrawCashState extends State<WithdrawCash> {
                   child: InkWell(
                     onTap: () {
                       if(amountController.text.isEmpty){
-                        showSnackbar(context, "please enter amount");
+                        showSnackbar(context, "please enter amount".tr);
                       }
                       else if(bankNumberController.text.isEmpty){
-                        showSnackbar(context, "please enter bank number");
+                        showSnackbar(context, "please enter bank number".tr);
                       }
                       else{
                         withdrawCash();
@@ -136,7 +137,7 @@ class _WithdrawCashState extends State<WithdrawCash> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'WITHDRAW',
+                              'WITHDRAW'.tr,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,

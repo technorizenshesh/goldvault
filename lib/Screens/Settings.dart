@@ -6,8 +6,11 @@ import 'package:goldvault/Screens/ChangePassword.dart';
 import 'package:goldvault/Screens/Verification.dart';
 import 'package:goldvault/Widgets/CustomAppBar.dart';
 import 'package:goldvault/Widgets/CustomTexts.dart';
-import 'package:flutter_share/flutter_share.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../Constants/api_constants.dart';
+import '../Constants/globalVaribles.dart';
 
 class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);
@@ -24,39 +27,39 @@ class _SettingsState extends State<Settings> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: appBar(context: context, title: "Setting"),
+      appBar: appBar(context: context, title: "Settings".tr),
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
           children: [
-            ListTile(
-              title: SubHeadingText(
-                text: "Allow Notifcations".tr,
-                fontWeight: FontWeight.bold,
-              ),
-              trailing: InkWell(
-                onTap: () {
-                  setState(() {
-                    isNotification = !isNotification;
-                  });
-                },
-                child: Switch(
-                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  activeColor: ColorConstant.buttonColor,
-                  inactiveTrackColor:
-                      ColorConstant.buttonColor.withOpacity(0.4),
-                  value: isNotification,
-                  onChanged: (newValue) {
-                    setState(() {
-                      isNotification = newValue;
-                    });
-                  },
-                ),
-              ),
-            ),
-            SizedBox(
-              height: height * 0.01,
-            ),
+            // ListTile(
+            //   title: SubHeadingText(
+            //     text: "Allow Notifcations".tr,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            //   trailing: InkWell(
+            //     onTap: () {
+            //       setState(() {
+            //         isNotification = !isNotification;
+            //       });
+            //     },
+            //     child: Switch(
+            //       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            //       activeColor: ColorConstant.buttonColor,
+            //       inactiveTrackColor:
+            //           ColorConstant.buttonColor.withOpacity(0.4),
+            //       value: isNotification,
+            //       onChanged: (newValue) {
+            //         setState(() {
+            //           isNotification = newValue;
+            //         });
+            //       },
+            //     ),
+            //   ),
+            // ),
+            // SizedBox(
+            //   height: height * 0.01,
+            // ),
             ListTile(
               onTap: () {
                 showSheet();
@@ -117,7 +120,8 @@ class _SettingsState extends State<Settings> {
                 size: 20,
               ),
               onTap: () {
-                share();
+             //   share();
+                Share.share("https://play.google.com/store/apps/details",subject: "Example Chooser Title");
               },
             ),
             SizedBox(
@@ -144,14 +148,16 @@ class _SettingsState extends State<Settings> {
     );
   }
 
-  Future<void> share() async {
-    print("object...");
-    await FlutterShare.share(
-        title: 'Example share',
-        text: 'Install app',
-        linkUrl: 'https://play.google.com/store/apps/details',
-        chooserTitle: 'Example Chooser Title');
-  }
+  // Future<void> share() async {
+  //   print("object...");
+  //   await FlutterShare.share(
+  //       title: 'Example share',
+  //       text: 'Install app',
+  //       linkUrl: 'https://play.google.com/store/apps/details',
+  //       chooserTitle: 'Example Chooser Title');
+  // }
+
+
 
   showSheet() {
     return showModalBottomSheet(
@@ -315,5 +321,7 @@ class _SettingsState extends State<Settings> {
     Get.updateLocale(locale);
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('language', locale.toString());
+    print("language --------------------- ${prefs.getString('language')}");
+    LangCode=prefs.getString('language').toString().split('_')[0];
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Screens/HomeTab.dart';
 import 'package:goldvault/Widgets/CustomAppBar.dart';
 import 'package:goldvault/Widgets/CustomButton.dart';
@@ -39,17 +40,17 @@ class _SuccessState extends State<Success> {
                       SizedBox(
                         height: 0.2,
                       ),
-                      MainHeadingText(text: 'Success!'),
+                      MainHeadingText(text: 'Success!'.tr),
                       SizedBox(
                         height: 0.2,
                       ),
                       SubHeadingText(
-                          text: widget.type == "Buy"
-                              ? "You successfully bought ${widget.weight} of gold"
+                          text: widget.type == "Buy".tr
+                              ? "You successfully bought ${widget.weight} of gold".tr
                               : widget.type == "Sell"
-                                  ? "You successfully sold ${widget.weight} of gold"
-                                  : widget.type == "Withdraw"
-                                      ? "You have successfully requested for withdrawn of ${widget.weight} € amount"
+                                  ? "You successfully sold ${widget.weight} of gold".tr
+                                  : widget.type == "Withdraw".tr
+                                      ? "You have successfully requested for withdrawn of ${widget.weight} € amount".tr
                                       : widget.type == "Redeem"?"You have successfully requested for Redeem gold of ${widget.weight}g":"")
                     ],
                   ),
@@ -58,7 +59,7 @@ class _SuccessState extends State<Success> {
                     bottom: 0,
                     child: Container(
                       child: CustomButton(
-                        text: "RETURN TO HOME",
+                        text: "RETURN TO HOME".tr,
                         width: width - 40,
                         onTap: () {
                           Navigator.push(

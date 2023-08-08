@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
@@ -12,6 +13,7 @@ import 'package:goldvault/Models/UpdateProfileModel.dart';
 import 'package:goldvault/Widgets/CustomAppBar.dart';
 import 'package:goldvault/Widgets/CustomButton.dart';
 import 'package:goldvault/Widgets/CustomTextField.dart';
+
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -99,7 +101,7 @@ class _EditProfileState extends State<EditProfile> {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-        appBar: appBar(context: context, title: "Edit Profile", actions: [
+        appBar: appBar(context: context, title: "Edit Profile".tr, actions: [
           Padding(
               padding: EdgeInsets.only(right: 20),
               child: SvgPicture.asset("assets/images/iButtonIcon.svg"))
@@ -117,7 +119,7 @@ class _EditProfileState extends State<EditProfile> {
                 // SizedBox(height: height*0.01,),
                 CustomTextField(
                   controller: lNameController,
-                  hintText: "Legal Name",
+                  hintText: "Legal Name".tr,
                   isValidator: false,
                 ),
                 SizedBox(
@@ -125,7 +127,7 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 CustomTextField(
                   controller: emailController,
-                  hintText: "Email Address",
+                  hintText: "Email Address".tr,
                   isValidator: false,
                   isEditable: true,
                 ),
@@ -134,7 +136,7 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 CustomTextField(
                   controller: mobileController,
-                  hintText: "Mobile Number",
+                  hintText: "Mobile Number".tr,
                   isValidator: false,
                 ),
                 SizedBox(
@@ -150,7 +152,7 @@ class _EditProfileState extends State<EditProfile> {
                 // ),
                 CustomTextField(
                   controller: addressController,
-                  hintText: "Address",
+                  hintText: "Address".tr,
                   isValidator: false,
                 ),
                 SizedBox(
@@ -158,7 +160,7 @@ class _EditProfileState extends State<EditProfile> {
                 ),
                 CustomTextField(
                   controller: cityController,
-                  hintText: "City",
+                  hintText: "City".tr,
                   isValidator: false,
                 ),
                 SizedBox(
@@ -174,14 +176,14 @@ class _EditProfileState extends State<EditProfile> {
                 // ),
                 CustomTextField(
                   controller: countryController,
-                  hintText: "Country",
+                  hintText: "Country".tr,
                   isValidator: false,
                 ),
                 SizedBox(
                   height: height * 0.02,
                 ),
                 CustomButton(
-                  text: "SAVE",
+                  text: "SAVE".tr,
                   width: width * width,
                   onTap: () {
                     if (image == null) {
@@ -276,7 +278,7 @@ class _EditProfileState extends State<EditProfile> {
                       setState(() {});
                       Navigator.of(ctx).pop();
                     },
-                    child: const Text('Take Camera')),
+                    child:  Text('Take Camera'.tr)),
                 CupertinoActionSheetAction(
                     onPressed: () async {
                       image = await pickImage(true);
@@ -284,11 +286,11 @@ class _EditProfileState extends State<EditProfile> {
                       setState(() {});
                       Navigator.of(ctx).pop();
                     },
-                    child: const Text('Gallery')),
+                    child:  Text('Gallery'.tr)),
               ],
               cancelButton: CupertinoActionSheetAction(
                 onPressed: () => Navigator.of(ctx).pop(),
-                child: const Text('Close'),
+                child:  Text('Close'.tr),
               ),
             ));
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_share/flutter_share.dart';
+import 'package:get/get_utils/get_utils.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
@@ -39,7 +40,7 @@ class _EnterCodeState extends State<EnterCode> {
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: ParagraphText(
                 text:
-                'Get 5 € worth of gold when your friend uses your referral code and buy gold worth 50 €! How it works',
+                'Get 5 € worth of gold when your friend uses your referral code and buy gold worth 50 €! How it works'.tr,
                 fontSize: 16,
                 textAlign: TextAlign.center,),
             ),
@@ -74,7 +75,8 @@ class _EnterCodeState extends State<EnterCode> {
                   ),
                   InkWell(
                     onTap: (){
-                      share();
+                      Share.share("https://play.google.com/store/apps/details",subject: referalCode);
+
                     },
                     child: Container(
                       width: width * 0.25,
@@ -87,7 +89,7 @@ class _EnterCodeState extends State<EnterCode> {
                       child: Center(
                         child: ParagraphText(
                           text:
-                          'SHARE',color: Colors.white, fontSize: 18, textAlign: TextAlign.center,),
+                          'SHARE'.tr,color: Colors.white, fontSize: 18, textAlign: TextAlign.center,),
                       ),
                     ),
                   )
@@ -99,7 +101,7 @@ class _EnterCodeState extends State<EnterCode> {
             ),
             ParagraphText(
               text:
-              "You've received a bonus of 0.00 € as 0 of your friends have used your code!",
+              "You've received a bonus of 0.00 € as 0 of your friends have used your code!".tr,
               fontSize: 16,
               textAlign: TextAlign.center,),
           ],
@@ -107,13 +109,13 @@ class _EnterCodeState extends State<EnterCode> {
       ),
     );
   }
-  Future<void> share() async {
-    print("object...");
-    await FlutterShare.share(
-        title: 'Code share',
-        text: referalCode,
-        linkUrl: 'https://play.google.com/store/apps/details',
-       // chooserTitle: 'Example Chooser Title'
-    );
-  }
+  // Future<void> share() async {
+  //   print("object...");
+  //   await FlutterShare.share(
+  //       title: 'Code share',
+  //       text: referalCode,
+  //       linkUrl: 'https://play.google.com/store/apps/details',
+  //      // chooserTitle: 'Example Chooser Title'
+  //   );
+  // }
 }

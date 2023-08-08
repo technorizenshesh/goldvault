@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 import 'package:goldvault/Constants/webService.dart';
 import 'package:goldvault/Models/CheckOtpModel.dart';
@@ -57,10 +58,10 @@ class _OtpVerificationState extends State<OtpVerification> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: height*0.03,),
-              MainHeadingText(text: "OTP Verification",fontSize: 20),
+              MainHeadingText(text: "OTP Verification".tr,fontSize: 20),
               SizedBox(height: height*0.03,),
               Padding(padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
-                  child: ParagraphText(text: "Enter the verification code we just sent on your email address.",height: 1.5,
+                  child: ParagraphText(text: "Enter the verification code we just sent on your email address.".tr,height: 1.5,
                     textAlign: TextAlign.center,)),
               SizedBox(height: height*0.05,),
               _otp_field()

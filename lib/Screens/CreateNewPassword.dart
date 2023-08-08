@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 import 'package:goldvault/Constants/webService.dart';
 import 'package:goldvault/Models/CheckOtpModel.dart';
@@ -65,34 +66,34 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: height*0.03,),
-                MainHeadingText(text: "Create new password",fontSize: 20),
+                MainHeadingText(text: "Create new password".tr,fontSize: 20),
                 SizedBox(height: height*0.03,),
                 Padding(padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
-                    child: ParagraphText(text: "Your new password must be unique from those previously used least 8 character, number.",height: 1.5,
+                    child: ParagraphText(text: "Your new password must be unique from those previously used least 8 character, number.".tr,height: 1.5,
                       textAlign: TextAlign.center,)),
                 SizedBox(height: height*0.05,),
                 CustomTextField(
                   controller: passwordController,
-                  hintText: "Password",
+                  hintText: "Password".tr,
                   prefixIcon: "assets/images/PasswordIcon.svg",
                   suffixIcon: "assets/images/HidePassIcon.svg",
-                  errormsg: 'Enter password',
+                  errormsg: 'Enter password'.tr,
                 ),
                 SizedBox(
                   height: height * 0.02,
                 ),
                 CustomTextField(
                   controller: conpasswordController,
-                  hintText: "Repeat Password",
+                  hintText: "Repeat Password".tr,
                   prefixIcon: "assets/images/PasswordIcon.svg",
                   suffixIcon: "assets/images/HidePassIcon.svg",
-                  errormsg: 'Confirm password',
+                  errormsg: 'Confirm password'.tr,
                 ),
                 SizedBox(
                   height: height * 0.05,
                 ),
                 CustomButton(
-                  text: "RESET PASSWORD",
+                  text: "RESET PASSWORD".tr,
                   width: width * 0.8,
                   height: height * 0.06,
                   onTap: (){

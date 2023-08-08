@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 import 'package:goldvault/Constants/webService.dart';
@@ -96,7 +97,7 @@ class _OrderReviewState extends State<OrderReview> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: appBar(context: context, title: 'Order Review'),
+      appBar: appBar(context: context, title: 'Order Review'.tr),
       body: Container(
         width: width,
         child: Padding(
@@ -150,7 +151,7 @@ class _OrderReviewState extends State<OrderReview> {
                       SizedBox(
                         height: height * 0.05,
                       ),
-                      SubHeadingText(text: 'Address'),
+                      SubHeadingText(text: 'Address'.tr),
                       SizedBox(height: height*0.03,),
                       currentAddress==null?Center(child: CircularProgressIndicator()):
                       Container(
@@ -182,7 +183,7 @@ class _OrderReviewState extends State<OrderReview> {
                     bottom: 0,
                     child: Container(
                       child: CustomButton(
-                        text: "COMPLETE ORDER",
+                        text: "COMPLETE ORDER".tr,
                         width: width - 40,
                         onTap: () {
                           redeemGold();

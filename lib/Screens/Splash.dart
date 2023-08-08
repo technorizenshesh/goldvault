@@ -11,6 +11,9 @@ import 'package:goldvault/Models/GetUserProfileModel.dart';
 import 'package:goldvault/Screens/HomePage.dart';
 import 'package:goldvault/Screens/Login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import '../Constants/globalVaribles.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -21,7 +24,9 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   var savedUid;
-  var locale;
+  String locale='en_US';
+
+
 
   getUserProfileData() async {
     Map<String, dynamic> data = {
@@ -64,9 +69,10 @@ class _SplashState extends State<Splash> {
               () {
             if(savedUid!=null){
               getUserProfileData();
-              var country_code=locale.toString().split('_')[1].toString();
-              var lang_code=locale.toString().split('_')[0].toString();
-              Get.updateLocale(Locale(lang_code,country_code));
+
+              print('language is....${locale}');
+              LangCode=locale.split('_')[0];
+              Get.updateLocale(Locale('${locale.split('_')[0]}','${locale.split('_')[1]}'));
             }
             else{
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Login()));
@@ -81,7 +87,7 @@ class _SplashState extends State<Splash> {
     final SharedPreferences sharedPreferences =
     await SharedPreferences.getInstance();
     savedUid  = sharedPreferences.getString('UserId');
-    locale= sharedPreferences.getString('language');
+    locale= sharedPreferences.getString('language').toString();
     print('language is....${locale}');
     print("userId is $savedUid");
   }

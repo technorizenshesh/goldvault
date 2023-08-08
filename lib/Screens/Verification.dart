@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 
@@ -79,7 +80,7 @@ class _VerificationState extends State<Verification> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: appBar(context: context, title: "Verification"),
+      appBar: appBar(context: context, title: "Verification".tr),
       body: Padding(
         padding: EdgeInsets.all(20),
         child: SingleChildScrollView(
@@ -89,38 +90,38 @@ class _VerificationState extends State<Verification> {
               children: [
                 CustomTextField(
                   controller: fNameController,
-                  hintText: "First Name",
-                  errormsg: 'Enter password',
+                  hintText: "First Name".tr,
+                  errormsg: 'Enter Name'.tr,
                 ),
                 CustomTextField(
                   controller: lNameController,
                   hintText: "Last Name",
-                  errormsg: 'Enter password',
+                  errormsg: 'Enter Last Name'.tr,
                 ),
                 CustomTextField(
                   controller: addressController,
-                  hintText: "Address",
-                  errormsg: 'Enter password',
+                  hintText: "Address".tr,
+                  errormsg: 'Enter Address'.tr,
                 ),
                 CustomTextField(
                   controller: cityController,
-                  hintText: "City",
-                  errormsg: 'Enter password',
+                  hintText: "City".tr,
+                  errormsg: 'Enter City'.tr,
                 ),
                 CustomTextField(
                   controller: zipController,
-                  hintText: "Zip code",
-                  errormsg: 'Enter password',
+                  hintText: "Zip code".tr,
+                  errormsg: 'Enter Zip code'.tr,
                 ),
                 CustomTextField(
                   controller: countryController,
-                  hintText: "Country",
-                  errormsg: 'Enter password',
+                  hintText: "Country".tr,
+                  errormsg: 'Enter Country'.tr,
                 ),
                 CustomTextField(
                   controller: bankController,
-                  hintText: "Bank Number",
-                  errormsg: 'Enter password',
+                  hintText: "Bank Number".tr,
+                  errormsg: 'Enter Bank Number'.tr,
                 ),
                 SizedBox(
                   height: height * 0.05,
@@ -134,7 +135,7 @@ class _VerificationState extends State<Verification> {
                       child: Column(
                         children: [
                           ParagraphText(
-                            text: "Photo of ID Front",
+                            text: "Photo of ID Front".tr,
                             textAlign: TextAlign.center,
                             fontSize: 18,
                           ),
@@ -174,7 +175,7 @@ class _VerificationState extends State<Verification> {
                       child: Column(
                         children: [
                           ParagraphText(
-                            text: "Photo of ID Back",
+                            text: "Photo of ID Back".tr,
                             textAlign: TextAlign.center,
                             fontSize: 18,
                           ),
@@ -215,7 +216,7 @@ class _VerificationState extends State<Verification> {
                       child: Column(
                         children: [
                           ParagraphText(
-                            text: "Bank Statement",
+                            text: "Bank Statement".tr,
                             textAlign: TextAlign.center,
                             fontSize: 18,
                           ),
@@ -224,7 +225,7 @@ class _VerificationState extends State<Verification> {
                           ),
                           InkWell(
                             onTap: () {
-                              type = "bankStatement";
+                              type = "bankStatement".tr;
                               _showImage_popup(context, type);
                             },
                             child: Container(
@@ -254,26 +255,26 @@ class _VerificationState extends State<Verification> {
                 ),
                 ParagraphText(
                   text:
-                      "Photos  must  be  clear  and  readable.  Photo of bank  statement  must  show your  name  and  adress",
+                      "Photos  must  be  clear  and  readable.  Photo of bank  statement  must  show your  name  and  adress".tr,
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
                   height: height * 0.1,
                 ),
                 CustomButton(
-                  text: "SAVE",
+                  text: "SAVE".tr,
                   width: width * width,
                   onTap: () {
                     if (_formKey.currentState!.validate()) {
                       if(imageIdFront==null){
-                        showSnackbar(context, "add id front image");
+                        showSnackbar(context, "add id front image".tr);
                       }
                       else if(imageIdBack==null){
-                        showSnackbar(context, "add id back image");
+                        showSnackbar(context, "add id back image".tr);
 
                       }
                       else if(imageBankStatment==null){
-                        showSnackbar(context, "add bank statement");
+                        showSnackbar(context, "add bank statement".tr);
                       }
                       else{
                         verifyUser();
@@ -307,7 +308,7 @@ class _VerificationState extends State<Verification> {
                       setState(() {});
                       Navigator.of(ctx).pop();
                     },
-                    child: const Text('Take Camera')),
+                    child:  Text('Take Camera'.tr)),
                 CupertinoActionSheetAction(
                     onPressed: () async {
                       //  image = await pickImage(true);
@@ -322,11 +323,11 @@ class _VerificationState extends State<Verification> {
                       setState(() {});
                       Navigator.of(ctx).pop();
                     },
-                    child: const Text('Gallery')),
+                    child:  Text('Gallery'.tr)),
               ],
               cancelButton: CupertinoActionSheetAction(
                 onPressed: () => Navigator.of(ctx).pop(),
-                child: const Text('Close'),
+                child:  Text('Close'.tr),
               ),
             ));
   }

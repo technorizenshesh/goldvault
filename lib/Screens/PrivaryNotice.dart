@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 import 'package:goldvault/Constants/webService.dart';
@@ -36,7 +37,7 @@ class _PrivacyNoticeState extends State<PrivacyNotice> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(context: context, title: "Privacy"),
+      appBar: appBar(context: context, title: "Privacy".tr),
       body: Padding(
         padding: EdgeInsets.all(20),
         child: privacyResult == null

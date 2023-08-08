@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 import 'package:goldvault/Constants/webService.dart';
@@ -52,7 +53,7 @@ bool backwardIconVisibility = false;
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: appBar(context: context, title: "Redeem"),
+      appBar: appBar(context: context, title: "Redeem".tr),
       body: Container(
         width: width,
         child: Padding(
@@ -124,7 +125,7 @@ bool backwardIconVisibility = false;
                       child: Row(
                         children: [
                           CustomButton(
-                            text: "REDEEM",
+                            text: "REDEEM".tr,
                             width: width * 0.7,
                             onTap: () {
                               redeemGoldList.isEmpty?showSnackbar(context,'Select Gold'):
@@ -182,7 +183,7 @@ bool backwardIconVisibility = false;
                             width: MediaQuery.of(context).size.width * 0.05,
                           ),
                           AppBarHeadingText(
-                            text: "Buy Gold",
+                            text: "Buy Gold".tr,
                             fontSize: 18,
                           ),
                         ],
@@ -213,7 +214,7 @@ bool backwardIconVisibility = false;
                             width: MediaQuery.of(context).size.width * 0.05,
                           ),
                           AppBarHeadingText(
-                            text: "Sell Gold",
+                            text: "Sell Gold".tr,
                             fontSize: 18,
                           ),
                         ],
@@ -245,7 +246,7 @@ bool backwardIconVisibility = false;
                             width: MediaQuery.of(context).size.width * 0.05,
                           ),
                           AppBarHeadingText(
-                            text: "Withdraw Cash",
+                            text: "Withdraw Cash".tr,
                             fontSize: 18,
                           ),
                         ],
@@ -276,7 +277,7 @@ bool backwardIconVisibility = false;
                             width: MediaQuery.of(context).size.width * 0.05,
                           ),
                           AppBarHeadingText(
-                            text: "Redeem Gold",
+                            text: "Redeem Gold".tr,
                             fontSize: 18,
                           ),
                         ],

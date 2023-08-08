@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
@@ -92,7 +93,7 @@ class _InvestmentTabState extends State<InvestmentTab> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: AppBarHeadingText(
-          text: "Mar",
+          text: "Mar".tr,
           color: Colors.white,
         ),
         centerTitle: true,
@@ -157,7 +158,7 @@ class _InvestmentTabState extends State<InvestmentTab> {
             child: Align(
                 alignment: Alignment.centerLeft,
                 child: SubHeadingText(
-                  text: 'Chart',
+                  text: 'Chart'.tr,
                   fontSize: 20,
                 )),
           ),
@@ -217,7 +218,7 @@ class _InvestmentTabState extends State<InvestmentTab> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SubHeadingText(
-                        text: 'Price of Gold',
+                        text: 'Price of Gold'.tr,
                         fontSize: 17,
                       ),
                       Column(
@@ -242,7 +243,7 @@ class _InvestmentTabState extends State<InvestmentTab> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SubHeadingText(
-                        text: 'My Savings',
+                        text: 'My Savings'.tr,
                         fontSize: 17,
                       ),
                       Column(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Models/BuyGoldListModel.dart';
 import 'package:goldvault/Screens/OrderReview.dart';
@@ -69,7 +70,7 @@ class _MapScreenState extends State<MapScreen> {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-        appBar: appBar(context: context, title: "Order review"),
+        appBar: appBar(context: context, title: "Order Review".tr),
         body: Container(
           width: width,
           child: Container(
@@ -127,7 +128,7 @@ class _MapScreenState extends State<MapScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               MainHeadingText(
-                                text: 'Current Address',
+                                text: 'Current Address'.tr,
                                 fontSize: 18,
                               ),
                               SizedBox(
@@ -175,10 +176,10 @@ class _MapScreenState extends State<MapScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             CustomButton(
-                              text: "CONFIRM ADDRESS",
+                              text: "CONFIRM ADDRESS".tr,
                               width: width - 40,
                               onTap: () {
-                                currentAddress==null?showSnackbar(context, "address not found"):
+                                currentAddress==null?showSnackbar(context, "address not found".tr):
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(

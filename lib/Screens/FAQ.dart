@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
@@ -42,7 +43,7 @@ class _FAQState extends State<FAQ> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: appBar(context: context, title: "FAQ"),
+      appBar: appBar(context: context, title: "FAQ".tr),
       body: Padding(
         padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
         child: Column(

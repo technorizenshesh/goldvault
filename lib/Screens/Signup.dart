@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 import 'package:goldvault/Constants/webService.dart';
 import 'package:goldvault/Models/SignupModel.dart';
@@ -93,38 +94,38 @@ class _SignupState extends State<Signup> {
                     children: [
                       Align(
                         alignment: Alignment.topLeft,
-                        child: MainHeadingText(text: "Welcome!"),
+                        child: MainHeadingText(text: "Welcome!".tr),
                       ),
                       SizedBox(
                         height: height * 0.02,
                       ),
                       Align(
                           alignment: Alignment.topLeft,
-                          child: SubHeadingText(text: "Create Account")),
+                          child: SubHeadingText(text: "Create Account".tr)),
                       SizedBox(
                         height: height * 0.05,
                       ),
                       CustomTextField(
                         controller: nameController,
-                        hintText: "Full Name",
+                        hintText: "Full Name".tr,
                         prefixIcon: "assets/images/NameIcon.svg",
-                        errormsg: 'Enter Full name',
+                        errormsg: 'Enter Full name'.tr,
                       ),
                       SizedBox(
                         height: height * 0.02,
                       ),
                       CustomTextField(
                         controller: emailController,
-                        hintText: "Email Address",
+                        hintText: "Email Address".tr,
                         prefixIcon: "assets/images/EmailIcon.svg",
-                        errormsg: 'Enter Email',
+                        errormsg: 'Enter Email'.tr,
                       ),
                       SizedBox(
                         height: height * 0.02,
                       ),
                       CustomTextField(
                         controller: passwordController,
-                        hintText: "Password",
+                        hintText: "Password".tr,
                         obscureText: showPassword,
                         prefixIcon: "assets/images/PasswordIcon.svg",
                         suffixIcon: "assets/images/HidePassIcon.svg",
@@ -133,14 +134,14 @@ class _SignupState extends State<Signup> {
                             showPassword = !showPassword;
                           });
                         },
-                        errormsg: 'Enter password',
+                        errormsg: 'Enter password'.tr,
                       ),
                       SizedBox(
                         height: height * 0.02,
                       ),
                       CustomTextField(
                         controller: conpasswordController,
-                        hintText: "Repeat Password",
+                        hintText: "Repeat Password".tr,
                         obscureText: showConPassword,
                         prefixIcon: "assets/images/PasswordIcon.svg",
                         suffixIcon: "assets/images/HidePassIcon.svg",
@@ -150,28 +151,28 @@ class _SignupState extends State<Signup> {
                           });
                         },
                         errormsg: conpasswordController.text == ""
-                            ? 'confirm password'
+                            ? 'confirm password'.tr
                             : conpasswordController.text !=
                                     passwordController.text
-                                ? "password and confirmed password are not same"
+                                ? "password and confirmed password are not same".tr
                                 : "",
                       ),
                       SizedBox(
                         height: height * 0.03,
                       ),
-                      SubHeadingText(text: "Enter refer code to get rewards"),
+                      SubHeadingText(text: "Enter refer code to get rewards".tr),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 100),
                         child: CustomTextField(
                           controller: referCodeController,
-                          hintText: "Enter code here",
+                          hintText: "Enter code here".tr,
                         ),
                       ),
                       SizedBox(
                         height: height * 0.05,
                       ),
                       CustomButton(
-                        text: "NEXT",
+                        text: "NEXT".tr,
                         width: width * 0.8,
                         height: height * 0.05,
                         onTap: () {
@@ -187,7 +188,7 @@ class _SignupState extends State<Signup> {
                         height: height * 0.05,
                       ),
                       SubHeadingText(
-                        text: "Or Continue with",
+                        text: "Or Continue with".tr,
                         fontSize: 15,
                       ),
                       SizedBox(
@@ -231,7 +232,7 @@ class _SignupState extends State<Signup> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ParagraphText(
-                        text: "Already have an account?",
+                        text: "Already have an account?".tr,
                         color: Colors.grey,
                         fontSize: 17,
                       ),
@@ -241,7 +242,7 @@ class _SignupState extends State<Signup> {
                               MaterialPageRoute(builder: (context) => Login()));
                         },
                         child: Text(
-                          "SIGN IN",
+                          "SIGN IN".tr,
                           style: TextStyle(
                             color: ColorConstant.textColor,
                             fontSize: 18,

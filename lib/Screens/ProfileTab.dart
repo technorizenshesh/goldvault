@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Screens/AboutGoldVault.dart';
@@ -30,7 +31,7 @@ class _ProfileTabState extends State<ProfileTab> {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: appBar(context: context, title: "Profile", implyLeading: false),
+      appBar: appBar(context: context, title: "Profile".tr, implyLeading: false),
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
@@ -84,7 +85,7 @@ class _ProfileTabState extends State<ProfileTab> {
               leading: SvgPicture.asset("assets/images/GetSupportIcon.svg"),
               title:
               SubHeadingText(
-                text: 'Get Support',
+                text: 'Get Support'.tr,
               ),
               onTap: (){
                 Navigator.push(
@@ -96,7 +97,7 @@ class _ProfileTabState extends State<ProfileTab> {
             ListTile(
               leading: SvgPicture.asset("assets/images/SettingsIcon.svg"),
               title: SubHeadingText(
-                text: 'Settings',
+                text: 'Settings'.tr,
               ),
               onTap: (){
                 Navigator.push(
@@ -108,7 +109,7 @@ class _ProfileTabState extends State<ProfileTab> {
             ListTile(
               leading: SvgPicture.asset("assets/images/AboutIcon.svg"),
               title: SubHeadingText(
-                text: 'About Gold Vault',
+                text: 'About Gold Vault'.tr,
               ),
               onTap: (){
                 Navigator.push(
@@ -120,7 +121,7 @@ class _ProfileTabState extends State<ProfileTab> {
             ListTile(
               leading: SvgPicture.asset("assets/images/FAQIcon.svg"),
               title: SubHeadingText(
-                text: 'FAQ',
+                text: 'FAQ'.tr,
               ),
               onTap: (){
                 Navigator.push(
@@ -132,7 +133,7 @@ class _ProfileTabState extends State<ProfileTab> {
             ListTile(
               leading: SvgPicture.asset("assets/images/T&CIcon.svg"),
               title: SubHeadingText(
-                text: 'Terms and Conditions',
+                text: 'Terms and Conditions'.tr,
               ),
               onTap: (){
                 Navigator.push(
@@ -144,7 +145,7 @@ class _ProfileTabState extends State<ProfileTab> {
             ListTile(
               leading: SvgPicture.asset("assets/images/PrivacyPolicyIcon.svg"),
               title: SubHeadingText(
-                text: 'Privacy Notice',
+                text: 'Privacy Notice'.tr,
               ),
               onTap: (){
                 Navigator.push(
@@ -156,7 +157,7 @@ class _ProfileTabState extends State<ProfileTab> {
             ListTile(
               leading: SvgPicture.asset("assets/images/LogoutIcon.svg"),
               title: SubHeadingText(
-                text: 'LogOut',
+                text: 'LogOut'.tr,
               ),
               onTap: (){
                 _showDialog(context);
@@ -173,11 +174,11 @@ class _ProfileTabState extends State<ProfileTab> {
       builder: (BuildContext context) {
         return AlertDialog(
           title:
-          Text("Log Out", style: TextStyle(fontWeight: FontWeight.bold)),
-          content: Text("Are you sure you want to Log out?"),
+          Text("Log Out".tr, style: TextStyle(fontWeight: FontWeight.bold)),
+          content: Text("Are you sure you want to Log out?".tr),
           actions: <Widget>[
             TextButton(
-              child: new Text("No",
+              child: new Text("No".tr,
                   style: TextStyle(
                       color: ColorConstant.buttonColor, fontWeight: FontWeight.bold)),
               onPressed: () {
@@ -185,7 +186,7 @@ class _ProfileTabState extends State<ProfileTab> {
               },
             ),
             TextButton(
-              child: Text("Yes",
+              child: Text("Yes".tr,
                   style: TextStyle(
                       color:ColorConstant.buttonColor, fontWeight: FontWeight.bold)),
               onPressed: () async {

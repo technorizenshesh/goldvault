@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Screens/ChatDetailScreen.dart';
 import 'package:goldvault/Screens/FAQ.dart';
 import 'package:goldvault/Widgets/CustomAppBar.dart';
@@ -27,7 +28,7 @@ class _GetSupportState extends State<GetSupport> {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: appBar(context: context,title: "Get Support"),
+      appBar: appBar(context: context,title: "Get Support".tr),
       body: Padding(
         padding: EdgeInsets.fromLTRB(20,20,25,20),
         child: Column(
@@ -43,13 +44,13 @@ class _GetSupportState extends State<GetSupport> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SubHeadingText(
-                  text: 'Read our FAQ',
+                  text: 'Read our FAQ'.tr,
                 ),
                 SizedBox(
                   height: height * 0.01,
                 ),
                 ParagraphText(
-                  text: 'Looking for more information? Check out our FAQs!',fontSize: 16,
+                  text: 'Looking for more information? Check out our FAQs!'.tr,fontSize: 16,
                 )
               ],
             ),
@@ -66,13 +67,13 @@ class _GetSupportState extends State<GetSupport> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SubHeadingText(
-                    text: 'Chat with us',
+                    text: 'Chat with us'.tr,
                   ),
                   SizedBox(
                     height: height * 0.01,
                   ),
                   ParagraphText(
-                    text: 'Got questions or suggestions? Come say hello!',fontSize: 16,
+                    text: 'Got questions or suggestions? Come say hello!'.tr,fontSize: 16,
                   )
                 ],
               ),
@@ -86,13 +87,13 @@ class _GetSupportState extends State<GetSupport> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SubHeadingText(
-                    text: 'Email us',
+                    text: 'Email us'.tr,
                   ),
                   SizedBox(
                     height: height * 0.01,
                   ),
                   ParagraphText(
-                    text: "info@goldvault.sk We'll reply shortly",fontSize: 16,
+                    text: "info@goldvault.sk We'll reply shortly".tr,fontSize: 16,
                   )
                 ],
               ),
@@ -106,13 +107,13 @@ class _GetSupportState extends State<GetSupport> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SubHeadingText(
-                    text: 'Call us',
+                    text: 'Call us'.tr,
                   ),
                   SizedBox(
                     height: height * 0.01,
                   ),
                   ParagraphText(
-                    text: "Monday - Friday, 9am - 6pm (excluding public holidays)",fontSize: 16,
+                    text: "Monday - Friday, 9am - 6pm (excluding public holidays)".tr,fontSize: 16,
                   )
                 ],
               ),

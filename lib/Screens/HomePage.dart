@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 
 import 'package:goldvault/Screens/HistoryTab.dart';
@@ -41,17 +42,17 @@ class _HomePageState extends State<HomePage> {
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: SvgPicture.asset(_selectedIndex == 0 ?'assets/images/HomeIconColored.svg':'assets/images/HomeIconGrey.svg',height: 25,),
-              label: 'Home',
+              label: 'Home'.tr,
             ),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(_selectedIndex == 1 ?'assets/images/HistoryIconColored.svg':'assets/images/HistoryIconGrey.svg',height: 25,),
-                label: 'History'),
+                label: 'History'.tr),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(_selectedIndex == 2 ?'assets/images/InvestmentIconColored.svg':'assets/images/InvestmentIconGrey.svg',height: 25,),
-                label: 'Investment'),
+                label: 'Investment'.tr),
             BottomNavigationBarItem(
                 icon: SvgPicture.asset(_selectedIndex == 3 ?'assets/images/ProfileIconColored.svg':'assets/images/ProfileIconGrey.svg',height: 25,),
-                label: 'Profile'
+                label: 'Profile'.tr
             ),
           ],
           type: BottomNavigationBarType.shifting,

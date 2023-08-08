@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:get/get_utils/src/extensions/export.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 import 'package:goldvault/Constants/webService.dart';
@@ -101,7 +102,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
               children: [
                 SvgPicture.asset('assets/images/LocationIconBlack.svg',height: 15,),
                 SizedBox(width: width*0.02,),
-                SubHeadingText(text: "$formattedDate in Indore, India",fontWeight: FontWeight.w500,fontSize: 13,)
+                SubHeadingText(text: "$formattedDate in Indore, India".tr,fontWeight: FontWeight.w500,fontSize: 13,)
               ],
             )
 
@@ -274,7 +275,7 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
             Expanded(
               child: TextField(
                 decoration: InputDecoration.collapsed(
-                  hintText: 'Type message..',
+                  hintText: 'Type message'.tr,
                 ),
                 controller: messageController,
                 onChanged: (f) {

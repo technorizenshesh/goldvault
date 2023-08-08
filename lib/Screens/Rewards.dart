@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Screens/EnterCode.dart';
@@ -26,7 +27,7 @@ class _RewardsState extends State<Rewards> with TickerProviderStateMixin{
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: AppBarHeadingText(text: 'Rewards'),
+        title: AppBarHeadingText(text: 'Rewards'.tr),
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -48,12 +49,12 @@ class _RewardsState extends State<Rewards> with TickerProviderStateMixin{
                         borderRadius: BorderRadius.circular(10.0)),
                     labelColor: Colors.white,
                     unselectedLabelColor: Colors.black,
-                    tabs: const [
+                    tabs:  [
                       Tab(
-                        text: 'Enter code',
+                        text: 'Enter code'.tr,
                       ),
                       Tab(
-                        text: 'Invite friends',
+                        text: 'Invite friends'.tr,
                       ),
                     ],
                   ),

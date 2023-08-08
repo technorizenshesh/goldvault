@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Widgets/CustomAppBar.dart';
 import 'package:goldvault/Widgets/CustomTexts.dart';
@@ -18,7 +19,7 @@ class _GoldDetailScreenState extends State<GoldDetailScreen> {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: appBar(context: context, title: "Suisse Fine Gold"),
+      appBar: appBar(context: context, title: "Suisse Fine Gold".tr),
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Column(
@@ -55,7 +56,7 @@ class _GoldDetailScreenState extends State<GoldDetailScreen> {
                       children: [
                         Expanded(
                             flex: 3,
-                            child: SubHeadingText(text: "Jenis:")),
+                            child: SubHeadingText(text: "Jenis:".tr)),
                         Expanded(
                           flex: 6,
                           child: SubHeadingText(
@@ -68,7 +69,7 @@ class _GoldDetailScreenState extends State<GoldDetailScreen> {
                   children: [
                     Expanded(
                         flex: 3,
-                        child: SubHeadingText(text: "Berat:")),
+                        child: SubHeadingText(text: "Berat:".tr)),
                     Expanded(
                       flex: 6,
                       child: SubHeadingText(
@@ -80,7 +81,7 @@ class _GoldDetailScreenState extends State<GoldDetailScreen> {
                       children: [
                         Expanded(
                             flex: 3,
-                            child: SubHeadingText(text: "Ketebalan:")),
+                            child: SubHeadingText(text: "Ketebalan:".tr)),
                         Expanded(
                           flex: 6,
                           child: SubHeadingText(
@@ -93,7 +94,7 @@ class _GoldDetailScreenState extends State<GoldDetailScreen> {
                       children: [
                         Expanded(
                             flex: 3,
-                            child: SubHeadingText(text: "Saiz:")),
+                            child: SubHeadingText(text: "Saiz:".tr)),
                         Expanded(
                           flex: 6,
                           child: SubHeadingText(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 import 'package:goldvault/Constants/webService.dart';
@@ -96,7 +97,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               SizedBox(
                 height: height * 0.03,
               ),
-              MainHeadingText(text: "Forgot Password?", fontSize: 20),
+              MainHeadingText(text: "Forgot Password?".tr, fontSize: 20),
               SizedBox(
                 height: height * 0.03,
               ),
@@ -104,7 +105,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
                   child: ParagraphText(
                     text:
-                        "Don't worry! It occurs. Please enter the email address linked with your account.New code will be received after 60 seconds",
+                        "Don't worry! It occurs. Please enter the email address linked with your account.New code will be received after 60 seconds".tr,
                     height: 1.5,
                     textAlign: TextAlign.center,
                   )),
@@ -113,7 +114,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               ),
               CustomTextField(
                 controller: emailController,
-                hintText: "Email",
+                hintText: "Email".tr,
                 prefixIcon: "assets/images/EmailIcon.svg",
                 errormsg: 'Confirm password',
               ),
@@ -121,7 +122,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 height: height * 0.05,
               ),
               CustomButton(
-                text: "SEND",
+                text: "SEND".tr,
                 width: width * 0.8,
                 height: height * 0.05,
                 onTap: () {
@@ -132,7 +133,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 height: height * 0.05,
               ),
               TextButton(
-                child: Text("ResendOTP",
+                child: Text("ResendOTP".tr,
                     style: TextStyle(
                       color: ColorConstant.textColor,
                       fontWeight: FontWeight.bold,

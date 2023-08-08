@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
@@ -23,7 +24,7 @@ class BuyGold extends StatefulWidget {
 
 class _BuyGoldState extends State<BuyGold> {
   TextEditingController amountController = TextEditingController();
-  String paymentMethod = "Select payment method";
+  String paymentMethod = "Select payment method".tr;
   List<GetGoldTypeResult> selectedGoldListResult = [];
   var selectedGold;
   String selectedPrice = "0.00", selectedWeight = "0.000" ;
@@ -56,7 +57,7 @@ class _BuyGoldState extends State<BuyGold> {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: appBar(context: context, title: "Buy Gold"),
+      appBar: appBar(context: context, title: "Buy Gold".tr),
       body: SingleChildScrollView(
         child: Container(
           height: height * 0.87,
@@ -71,12 +72,12 @@ class _BuyGoldState extends State<BuyGold> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          ParagraphText(text: 'Current Gold Price:'),
+                          ParagraphText(text: 'Current Gold Price:'.tr),
                           SizedBox(
                             width: width * 0.03,
                           ),
                           SubHeadingText(
-                            text: "${goldPriceResult!.price} €/g",
+                            text: "${goldPriceResult?.price.toString()} €/g",
                             fontWeight: FontWeight.bold,
                           )
                         ],
@@ -86,7 +87,7 @@ class _BuyGoldState extends State<BuyGold> {
                       height: height * 0.03,
                     ),
                     ParagraphText(
-                      text: 'Minimum ammont 10 EUR',
+                      text: 'Minimum ammont 10 EUR'.tr,
                       fontSize: 16,
                     ),
                     SizedBox(
@@ -183,7 +184,7 @@ class _BuyGoldState extends State<BuyGold> {
                                 SubHeadingText(
                                   text: paymentMethod,
                                   color:
-                                      paymentMethod == "Select payment method"
+                                      paymentMethod == "Select payment method".tr
                                           ? Colors.grey
                                           : Colors.black87,
                                 ),
@@ -202,7 +203,7 @@ class _BuyGoldState extends State<BuyGold> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SubHeadingText(
-                          text: "Gold Purchased:",
+                          text: "Gold Purchased:".tr,
                           color: Colors.grey,
                           fontSize: 18,
                         ),
@@ -216,7 +217,7 @@ class _BuyGoldState extends State<BuyGold> {
                       height: height * 0.22,
                     ),
                     SubHeadingText(
-                      text: "Rates update automatically",
+                      text: "Rates update automatically".tr,
                       color: Colors.grey,
                     ),
                   ],
@@ -227,16 +228,16 @@ class _BuyGoldState extends State<BuyGold> {
                   child: InkWell(
                     onTap: () {
                       if(selectedGold==null){
-                        showSnackbar(context, 'Please select amount');
+                        showSnackbar(context, 'Please select amount'.tr);
                       }
-                     else if (paymentMethod == "Bank") {
+                     else if (paymentMethod == "Bank".tr) {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => Bank()));
-                      } else if (paymentMethod == "Card") {
+                      } else if (paymentMethod == "Card".tr) {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => NewCard(gold_id: widget.goldTypeId, amount: selectedPrice, weight: selectedWeight,)));
                       } else {
-                        showSnackbar(context, 'Please select payment method');
+                        showSnackbar(context, 'Please select payment method'.tr);
 
                       }
                     },
@@ -250,7 +251,7 @@ class _BuyGoldState extends State<BuyGold> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'BUY NOW',
+                              'BUY NOW'.tr,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
@@ -295,7 +296,7 @@ class _BuyGoldState extends State<BuyGold> {
                   InkWell(
                     onTap: () {
                       setState(() {
-                        paymentMethod = "Bank";
+                        paymentMethod = "Bank".tr;
                         Navigator.pop(context);
                       });
                     },
@@ -310,13 +311,13 @@ class _BuyGoldState extends State<BuyGold> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             AppBarHeadingText(
-                              text: "Bank",
+                              text: "Bank".tr,
                               fontSize: 18,
                             ),
                             SizedBox(
                               height: MediaQuery.of(context).size.height * 0.01,
                             ),
-                            ParagraphText(text: "Use your cash balance to buy"),
+                            ParagraphText(text: "Use your cash balance to buy".tr),
                           ],
                         ),
                       ],
@@ -336,7 +337,7 @@ class _BuyGoldState extends State<BuyGold> {
                   InkWell(
                     onTap: () {
                       setState(() {
-                        paymentMethod = "Card";
+                        paymentMethod = "Card".tr;
                         Navigator.pop(context);
                       });
                     },
@@ -351,14 +352,14 @@ class _BuyGoldState extends State<BuyGold> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             AppBarHeadingText(
-                              text: "Card",
+                              text: "Card".tr,
                               fontSize: 18,
                             ),
                             SizedBox(
                               height: MediaQuery.of(context).size.height * 0.01,
                             ),
                             ParagraphText(
-                                text: "We accept VISA and MasterCard"),
+                                text: "We accept VISA and MasterCard".tr),
                           ],
                         ),
                       ],

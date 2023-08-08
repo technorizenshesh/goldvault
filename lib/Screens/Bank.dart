@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Widgets/CustomAppBar.dart';
 import 'package:goldvault/Widgets/CustomTextField.dart';
@@ -22,7 +23,7 @@ class _BankState extends State<Bank> {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: appBar(context: context,title: 'Bank'),
+      appBar: appBar(context: context,title: 'Bank'.tr),
       body:
       Stack(
         children: [
@@ -37,42 +38,42 @@ class _BankState extends State<Bank> {
                       SizedBox(
                         height: height * 0.03,
                       ),
-                      SubHeadingText(text: 'Account Number'),
+                      SubHeadingText(text: 'Account Number'.tr),
                       SizedBox(
                         height: height * 0.03,
                       ),
                       CustomTextField(
                         isEditable: true,
                         controller: accNumberController,
-                        hintText: "Enter Account Number",
+                        hintText: "Enter Account Number".tr,
                         borderColor: Colors.black12,
                         borderradius: 10,
                       ),
                       SizedBox(
                         height: height * 0.03,
                       ),
-                      SubHeadingText(text: 'BIC/SWIFT'),
+                      SubHeadingText(text: 'BIC/SWIFT'.tr),
                       SizedBox(
                         height: height * 0.03,
                       ),
                       CustomTextField(
                         isEditable: true,
                         controller: codeController,
-                        hintText: "Enter Code",
+                        hintText: "Enter Code".tr,
                         borderColor: Colors.black12,
                         borderradius: 10,
                       ),
                       SizedBox(
                         height: height * 0.03,
                       ),
-                      SubHeadingText(text: 'Reference'),
+                      SubHeadingText(text: 'Reference'.tr),
                       SizedBox(
                         height: height * 0.03,
                       ),
                       CustomTextField(
                         isEditable: true,
                         controller: nameController,
-                        hintText: "Enter Name",
+                        hintText: "Enter Name".tr,
                         borderColor: Colors.black12,
                         borderradius: 10,
                       ),
@@ -90,7 +91,7 @@ class _BankState extends State<Bank> {
                 color: ColorConstant.buttonColor,
                 child: Center(
                     child: Text(
-                      'CHECK OUT',
+                      'CHECK OUT'.tr,
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,

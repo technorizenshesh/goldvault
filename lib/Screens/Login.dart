@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/SizeConstant.dart';
@@ -13,6 +14,7 @@ import 'package:goldvault/Widgets/CustomSnackBar.dart';
 import 'package:goldvault/Widgets/CustomTextField.dart';
 import 'package:goldvault/Widgets/CustomTexts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../Constants/globalVaribles.dart';
 import 'ForgotPassword.dart';
 
 class Login extends StatefulWidget {
@@ -30,12 +32,13 @@ class _LoginState extends State<Login> {
   bool showPassword = true;
 
   Signin() async {
-    Map<String, dynamic> data = {
+    var user = {
       "email": emailController.text,
-      "password": passwordController.text
+      "password": passwordController.text,
+      "register_id": tokenId,
     };
     var res = await Webservices.postData(
-        apiUrl: "$baseUrl$login", body: data, context: context);
+        apiUrl: "$baseUrl$login", body: user, context: context);
     print("status from api ${res}");
     final resdata = SignupModel.fromJson(res);
     print(resdata);
@@ -76,20 +79,20 @@ class _LoginState extends State<Login> {
                   children: [
                     Align(
                       alignment: Alignment.topLeft,
-                      child: MainHeadingText(text: "Welcome Back!"),
+                      child: MainHeadingText(text: "Welcome Back!".tr),
                     ),
                     SizedBox(
                       height: height * 0.02,
                     ),
                     Align(
                         alignment: Alignment.topLeft,
-                        child: SubHeadingText(text: "Login to continue")),
+                        child: SubHeadingText(text: "Login to continue".tr)),
                     SizedBox(
                       height: height * 0.05,
                     ),
                     CustomTextField(
                       controller: emailController,
-                      hintText: "Email",
+                      hintText: "Email".tr,
                       prefixIcon: "assets/images/EmailIcon.svg",
                       errormsg: 'Enter Email',
                     ),
@@ -99,7 +102,7 @@ class _LoginState extends State<Login> {
                     CustomTextField(
                       controller: passwordController,
                       obscureText: showPassword,
-                      hintText: "Password",
+                      hintText: "Password".tr,
                       prefixIcon: "assets/images/PasswordIcon.svg",
                       suffixIcon: "assets/images/HidePassIcon.svg",
                       suffixAction: () {
@@ -107,7 +110,7 @@ class _LoginState extends State<Login> {
                           showPassword = !showPassword;
                         });
                       },
-                      errormsg: 'Enter password',
+                      errormsg: 'Enter password'.tr,
                     ),
                     SizedBox(
                       height: height * 0.05,
@@ -120,7 +123,7 @@ class _LoginState extends State<Login> {
                                   builder: (context) => ForgotPassword()));
                         },
                         child: Text(
-                          "Forgot Password",
+                          "Forgot Password".tr,
                           style: TextStyle(
                             decoration: TextDecoration.underline,
                           ),
@@ -129,7 +132,7 @@ class _LoginState extends State<Login> {
                       height: height * 0.05,
                     ),
                     CustomButton(
-                      text: "NEXT",
+                      text: "NEXT".tr,
                       width: width * 0.8,
                       height: height * 0.05,
                       onTap: () {
@@ -142,7 +145,7 @@ class _LoginState extends State<Login> {
                       height: height * 0.08,
                     ),
                     SubHeadingText(
-                      text: "Or Continue with",
+                      text: "Or Continue with".tr,
                       fontSize: 15,
                     ),
                     SizedBox(
@@ -185,7 +188,7 @@ class _LoginState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ParagraphText(
-                        text: "Don't have an account?",
+                        text: "Don't have an account?".tr,
                         color: Colors.grey,
                         fontSize: 17,
                       ),
@@ -197,7 +200,7 @@ class _LoginState extends State<Login> {
                                   builder: (context) => Signup()));
                         },
                         child: Text(
-                          "SIGN UP",
+                          "SIGN UP".tr,
                           style: TextStyle(
                             color: ColorConstant.textColor,
                             fontSize: 18,

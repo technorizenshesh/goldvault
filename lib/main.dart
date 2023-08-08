@@ -9,7 +9,7 @@ import 'package:goldvault/Screens/Splash.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
-
+import 'package:permission_handler/permission_handler.dart';
 import 'Constants/firebasesetup.dart';
 
 Future<void> main() async {
@@ -65,17 +65,32 @@ Future<void> main() async {
   );
   await FirebasePushNotifications.firebaseSetup();
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+   MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  @override
+  initState()  {
+    // getCurrentAppTheme();
+
+    Permission.notification.request();
+    super.initState();
+  }
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return GetMaterialApp(
       translations: LocalString(),
+      debugShowCheckedModeBanner: false,
       locale: Locale('en', 'US'),
       // localizationsDelegates: [
       //   GlobalMaterialLocalizations.delegate,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Screens/BuyGold.dart';
 import 'package:goldvault/Screens/ChooseGold.dart';
@@ -22,7 +23,7 @@ class _MyGoldState extends State<MyGold> {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: appBar(context: context, title: "My Gold"),
+      appBar: appBar(context: context, title: "My Gold".tr),
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Stack(
@@ -50,7 +51,7 @@ class _MyGoldState extends State<MyGold> {
                         ),
                         Row(
                           children: [
-                            ParagraphText(text: "Cash Balance: "),
+                            ParagraphText(text: "Cash Balance: ".tr),
                             SubHeadingText(
                               text: '0.22 €',
                               fontSize: 14,
@@ -68,7 +69,7 @@ class _MyGoldState extends State<MyGold> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ParagraphText(
-                      text: "My total gold value: ",
+                      text: "My total gold value: ".tr,
                       fontSize: 18,
                     ),
                     AppBarHeadingText(
@@ -88,7 +89,7 @@ class _MyGoldState extends State<MyGold> {
                     //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CustomButton(
-                        text: "BUY GOLD",
+                        text: "BUY GOLD".tr,
                         width: width * 0.7,
                         onTap: () {
                           // Navigator.push(

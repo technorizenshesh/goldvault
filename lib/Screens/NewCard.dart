@@ -6,6 +6,7 @@ import 'package:flutter_credit_card/credit_card_widget.dart';
 import 'package:flutter_credit_card/custom_card_type_icon.dart';
 import 'package:flutter_credit_card/glassmorphism_config.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
@@ -203,7 +204,7 @@ class _NewCardState extends State<NewCard> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: appBar(context: context, title: 'Card'),
+      appBar: appBar(context: context, title: 'Card'.tr),
       resizeToAvoidBottomInset: false,
       body:Stack(
         children: [
@@ -218,7 +219,7 @@ class _NewCardState extends State<NewCard> {
                   color: ColorConstant.buttonColor,
                   child: Center(
                       child: loader?CustomLoader():Text(
-                    'CHECK OUT',
+                    'CHECK OUT'.tr,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
@@ -345,7 +346,7 @@ class _NewCardState extends State<NewCard> {
                                           children: [
                                             MainHeadingText(
                                               text:
-                                                  "Account Holder \n ${getCardResult[i].cardHolderName}  ",
+                                                  "Account Holder \n ${getCardResult[i].cardHolderName}  ".tr,
                                               color: Colors.white,
                                               fontSize: 12,
                                             ),
@@ -410,7 +411,7 @@ class _NewCardState extends State<NewCard> {
                         themeColor: Colors.black,
                         textColor: Colors.black,
                         cardNumberDecoration: InputDecoration(
-                          labelText: 'Number',
+                          labelText: 'Number'.tr,
                           hintText: 'XXXX XXXX XXXX XXXX',
                           hintStyle: const TextStyle(color: Colors.black),
                           labelStyle: const TextStyle(color: Colors.black),
@@ -422,7 +423,7 @@ class _NewCardState extends State<NewCard> {
                           labelStyle: const TextStyle(color: Colors.black),
                           focusedBorder: border,
                           enabledBorder: border,
-                          labelText: 'Expired Date',
+                          labelText: 'Expired Date'.tr,
                           hintText: 'XX/XX',
                         ),
                         cvvCodeDecoration: InputDecoration(
@@ -430,7 +431,7 @@ class _NewCardState extends State<NewCard> {
                           labelStyle: const TextStyle(color: Colors.black),
                           focusedBorder: border,
                           enabledBorder: border,
-                          labelText: 'CVV',
+                          labelText: 'CVV'.tr,
                           hintText: 'XXX',
                         ),
                         cardHolderDecoration: InputDecoration(
@@ -438,7 +439,7 @@ class _NewCardState extends State<NewCard> {
                           labelStyle: const TextStyle(color: Colors.black),
                           focusedBorder: border,
                           enabledBorder: border,
-                          labelText: 'Card Holder',
+                          labelText: 'Card Holder'.tr,
                         ),
                         onCreditCardModelChange: onCreditCardModelChange,
                       ),
@@ -458,7 +459,7 @@ class _NewCardState extends State<NewCard> {
                             },
                           ),
                           title: SubHeadingText(
-                            text: 'Remember Card',
+                            text: 'Remember Card'.tr,
                             color: isRemember ? Colors.black : Colors.grey,
                           ),
                         ),
@@ -476,7 +477,7 @@ class _NewCardState extends State<NewCard> {
 
   void _onValidate() {
     if(cardList==true){
-      showSnackbar(context, "please select card");
+      showSnackbar(context, "please select card".tr);
     }
     else if(formKey.currentState!.validate()) {
         if (isRemember == true) {
@@ -506,11 +507,11 @@ class _NewCardState extends State<NewCard> {
       builder: (BuildContext context) {
         return AlertDialog(
           title:
-          Text("Delete Card", style: TextStyle(fontWeight: FontWeight.bold)),
-          content: Text("Are you sure to delete the card?"),
+          Text("Delete Card".tr, style: TextStyle(fontWeight: FontWeight.bold)),
+          content: Text("Are you sure to delete the card?".tr),
           actions: <Widget>[
             TextButton(
-              child: new Text("No",
+              child: new Text("No".tr,
                   style: TextStyle(
                       color: ColorConstant.buttonColor, fontWeight: FontWeight.bold)),
               onPressed: () {
@@ -518,7 +519,7 @@ class _NewCardState extends State<NewCard> {
               },
             ),
             TextButton(
-              child: Text("Yes",
+              child: Text("Yes".tr,
                   style: TextStyle(
                       color:ColorConstant.buttonColor, fontWeight: FontWeight.bold)),
               onPressed: () {

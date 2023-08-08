@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/ColorConstant.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
@@ -50,7 +51,7 @@ class _ConfirmationSellGoldState extends State<ConfirmationSellGold> {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: appBar(context: context, title: "OTP Verification"),
+      appBar: appBar(context: context, title: "OTP Verification".tr),
       body: Stack(
         children: [
           Padding(
@@ -60,7 +61,7 @@ class _ConfirmationSellGoldState extends State<ConfirmationSellGold> {
                 children: [
                   Center(
                       child: ParagraphText(
-                    text: "Enter the code that was sent to",
+                    text: "Enter the code that was sent to".tr,
                     fontSize: 18,
                   )),
                   SizedBox(

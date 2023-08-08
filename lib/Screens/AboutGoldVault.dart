@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 import 'package:goldvault/Constants/webService.dart';
@@ -43,7 +44,7 @@ class _AboutGoldVaultState extends State<AboutGoldVault> {
     final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      appBar: appBar(context: context, title: "About Gold Vault"),
+      appBar: appBar(context: context, title: "About Gold Vault".tr),
       body: Padding(
         padding: EdgeInsets.all(20),
         child:

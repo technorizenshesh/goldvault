@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 import 'package:goldvault/Constants/webService.dart';
@@ -36,7 +37,7 @@ class _TermsConditionScreenState extends State<TermsConditionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(context: context, title: "Terms and Conditions"),
+      appBar: appBar(context: context, title: "Terms and Conditions".tr),
       body: Padding(
         padding: EdgeInsets.all(20),
         child:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:goldvault/Constants/GlobalVariable.dart';
 import 'package:goldvault/Constants/api_constants.dart';
 import 'package:goldvault/Constants/webService.dart';
@@ -76,7 +77,7 @@ class _ChooseGoldState extends State<ChooseGold> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: appBar(context: context, title: "Choose Gold"),
+      appBar: appBar(context: context, title: "Choose Gold".tr),
       body: Padding(
         padding: EdgeInsets.all(20),
         child:
@@ -132,26 +133,26 @@ class _ChooseGoldState extends State<ChooseGold> {
                                  Column(
                                    crossAxisAlignment: CrossAxisAlignment.start,
                                    children: [
-                                     ParagraphText(text: 'Brand     :',color: Colors.black,fontSize: 18,),
+                                     ParagraphText(text: 'Brand     :'.tr,color: Colors.black,fontSize: 16,),
                                      SizedBox(height: 0.02,),
-                                     ParagraphText(text: 'Purity     :',color: Colors.black,fontSize: 18,),
+                                     ParagraphText(text: 'Purity     :'.tr,color: Colors.black,fontSize: 16,),
                                      SizedBox(height: 0.02,),
-                                     ParagraphText(text: 'Weight   :',color: Colors.black,fontSize: 18,),
+                                     ParagraphText(text: 'Weight   :'.tr,color: Colors.black,fontSize: 16,),
                                      SizedBox(height: 0.02,),
-                                     ParagraphText(text: 'Size        :',color: Colors.black,fontSize: 18,),
+                                     ParagraphText(text: 'Size        :'.tr,color: Colors.black,fontSize: 16,),
                                    ],
                                  ),
                                ),
                                Column(
                                  crossAxisAlignment: CrossAxisAlignment.start,
                                  children: [
-                                   ParagraphText(text: goldListResult[i].brand,color: Colors.black,fontSize: 18,),
+                                   ParagraphText(text: goldListResult[i].brand,color: Colors.black,fontSize: 16,),
                                    SizedBox(height: 0.02,),
-                                   ParagraphText(text: goldListResult[i].purity,color: Colors.black,fontSize: 18,),
+                                   ParagraphText(text: goldListResult[i].purity,color: Colors.black,fontSize: 16,),
                                    SizedBox(height: 0.02,),
-                                   ParagraphText(text: goldListResult[i].weight,color: Colors.black,fontSize: 18,),
+                                   ParagraphText(text: goldListResult[i].weight,color: Colors.black,fontSize: 16,),
                                    SizedBox(height: 0.02,),
-                                   ParagraphText(text:goldListResult[i].size,color: Colors.black,fontSize: 18,),
+                                   ParagraphText(text:goldListResult[i].size,color: Colors.black,fontSize: 16,),
                                  ],
                                ),
                              ], 
@@ -160,12 +161,12 @@ class _ChooseGoldState extends State<ChooseGold> {
                               alignment: Alignment.center,
                               padding: const EdgeInsets.all(24),
                               child: CustomButton(
-                                text: 'Add',
+                                text: 'Add'.tr,
                                 onTap: (){
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => BuyGold(goldTypeId: goldListResult[i].id,)));
+                                          builder: (context) => BuyGold(goldTypeId: goldListResult[i].id.toString(),)));
                                 },
                               ),
                             ),
